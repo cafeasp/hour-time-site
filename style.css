@@ -42,3 +42,49 @@ nav {
 nav a { margin-right: 1.1rem; text-decoration: none; }
 nav a:hover { text-decoration: underline; }
 footer { margin-top: 3rem; font-size: 0.9rem; color: #888; }
+
+/* Home page */
+body.home { max-width: 1000px; }
+.home a { color: #3d5bd9; }
+.hero { display: flex; gap: 2rem; align-items: center; justify-content: space-between; }
+.hero-text { max-width: 600px; }
+.app-icon { border-radius: 22%; display: block; margin-bottom: 1rem; }
+.hero h1 { font-size: 2.6rem; margin: 0; }
+.tagline { font-size: 1.3rem; font-weight: 600; margin: 0.25rem 0 0.75rem; }
+.badge { display: inline-block; margin: 0.75rem 0; padding: 0; }
+.badge img { display: block; height: 50px; width: auto; }
+.price { font-size: 0.95rem; color: #666; margin-top: 0; }
+.qr { text-align: center; flex-shrink: 0; }
+.qr img { background: #fff; border-radius: 12px; display: block; margin: 0 auto; }
+.qr p { font-size: 0.85rem; color: #666; margin: 0.5rem 0 0; }
+.gallery {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 250px)); justify-content: center;
+  gap: 2rem 2.5rem; padding: 1.5rem 0.25rem 1rem; margin: 1.5rem 0 0;
+}
+.gallery figure { margin: 0; text-align: center; }
+.gallery img {
+  width: 100%; height: auto; display: block; border-radius: 28px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.14);
+}
+.gallery figcaption { font-size: 0.92rem; margin-top: 0.75rem; color: #444; }
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0 2rem; }
+.features h3 { margin-bottom: 0.25rem; }
+.features p { margin-top: 0; }
+.button {
+  display: inline-block; margin-left: 0.5rem; padding: 0.45rem 1rem; border-radius: 999px;
+  background: #3d5bd9; color: #fff !important; text-decoration: none; font-weight: 600;
+}
+.legal { font-size: 0.8rem; margin-top: 0.75rem; }
+@media (prefers-color-scheme: dark) {
+  .home a { color: #8ea4ff; }
+  .button { background: #5b78f0; }
+  .price, .qr p, .gallery figcaption { color: #9a9aa0; }
+  .gallery img { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5); }
+}
+@media (max-width: 700px) {
+  .qr { display: none; }
+  .hero h1 { font-size: 2.1rem; }
+  .gallery { display: flex; gap: 1.25rem; overflow-x: auto; scroll-snap-type: x mandatory; }
+  .gallery figure { flex: 0 0 auto; width: 200px; scroll-snap-align: start; }
+  .button { margin: 0.5rem 0 0; }
+}
